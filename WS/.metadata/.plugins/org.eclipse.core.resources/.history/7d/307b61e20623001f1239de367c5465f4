@@ -1,0 +1,13 @@
+package com.cts.jf.models;
+
+public class Employee {
+
+	private int empId;
+	private String fullName;
+	private double salary;
+	
+	public Employee() {
+		//blank intentionally
+	}
+	
+}

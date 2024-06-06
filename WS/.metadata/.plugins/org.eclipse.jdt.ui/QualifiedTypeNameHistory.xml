@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.cts.jf.models.Employee"/>
+    <fullyQualifiedTypeName name="com.cts.jf.models.ContractEmployee"/>
+    <fullyQualifiedTypeName name="com.cts.jf.models.AdBoard"/>
+    <fullyQualifiedTypeName name="com.cts.jf.models.PhotoFrame"/>
+    <fullyQualifiedTypeName name="com.cts.jf.models.RectangularBoard"/>
+    <fullyQualifiedTypeName name="com.cts.jf.models.CircularBoard"/>
+</qualifiedTypeNameHistroy>

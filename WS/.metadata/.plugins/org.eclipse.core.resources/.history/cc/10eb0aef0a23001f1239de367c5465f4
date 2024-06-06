@@ -1,0 +1,23 @@
+package com.cts.jf.models;
+
+import java.util.Objects;
+
+public class ContractEmployee extends Employee {
+	
+	private int contractDuration;
+	
+	public ContractDuration() {
+		//blank intentionally
+	}
+
+	public ContractEmployee(int empId, String fullName, double salary,int contractDuration) {
+		super(empId, fullName, salary);
+		this.contractDuration = contractDuration;
+	}
+
+	@Override
+	public String toString() {
+		return  super.toString() + "\t ContractEmployee [contractDuration=" + contractDuration + "]";
+	}
+	
+}

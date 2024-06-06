@@ -1,0 +1,10 @@
+package com.cts.jf;
+
+public class App02InterfacesUsage {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
