@@ -1,0 +1,22 @@
+package com.cts.jf;
+
+import java.time.Duration;
+import java.time.LocalTime;
+import java.util.Scanner;
+
+public class App07DateTimeAPI {
+
+	public static void main(String[] args) {
+	
+		LocalTime startTime = LocalTime.now();
+		
+	
+		
+		LocalTime endTime = LocalTime.now();
+		
+		Duration progDur = Duration.between(startTime, endTime);
+		
+		System.out.println("It took "+ progDur.toMillis() +" milli secs to excute this application.");
+	}
+
+}
