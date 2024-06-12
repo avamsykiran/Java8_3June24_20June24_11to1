@@ -580,8 +580,94 @@ Java 8
         Collections (c)     is a class that providea avariety of utility functions.
 
     java.util.regex
+
+        Pattern pattern = Pattern.compile(regexp);
+
+        java.lang.String        matchses(regexp);
+
     java.util.function
+
+        this package provides a list of pte-declared functional interfaces.
+
     java.util.stream
+
+        Stream
+
+            is a class that represents 'a flow of data'.
+
+            DataSource <-----------stream-----------------> DataSink
+
+            DataSource  can be an array or a list or a set or any other collection.
+
+            DataSink    can be an array or a list or a set or any other collection or a single object or nothing.
+
+        Stream s1 = Stream.of(ele1,ele2,ele3...);
+        Stream s2 = Arrays.stream(array);
+        Stream s3 = listorSetorAnyOtherCollectionObj.stream();
+
+        Streams support functional programming.
+
+        Data-source
+            |---------Stream---------|
+                                    OPERATION
+                                        |---------Stream---------|
+                                                              OPERATION
+                                                                |---------Stream---------|
+                                                                                        Data-sink
+
+        As functional programming is a new paradigm that provides higher maintainability of data
+        manipulation when compared to their alernate looping-based-solutions.
+
+        Instacne Methods Of Stream Class
+
+            void forEach(Consumer)
+                execute the consuemr on each and every element of the stream.
+                this is a terminal operation as the stream termiantes into nothing.
+            
+            Collection collect(Collector)
+                is used to collect a stream into a collection.
+                this is a terminal operation as the stream termiantes into a collection.
+
+                Collectors.toList()
+                Collectors.toSet()
+                Collectors.toMap() ...etc., are Collectors
+
+                Set set = streamObj.collect(Collectors.toSet());
+           
+            T reduce(identity,binaryOperator)
+            Optional<T> reduce(binaryOperator)
+
+                it is going to reduce a stream into a single element.
+                this is a terminal operation as the stream termiantes into a single element.
+
+                int[] nums = new int[] {1,2,3,4,5};
+                BinaryOperator prd = (x,y) -> x*y;
+                int result = Arrays.stream(nums).reduce(1,prd); 
+                                // prd(prd(prd(prd(prd(1,1),2),3),4),5) -> 120
+                
+                Optional<Integer> result2 = Arrays.stream(nums).reduce(prd); 
+                                // prd(prd(prd(prd(1,2),3),4),5) -> 120
+
+            Stream filter(predicate)
+
+                it executes the predicate on each eleemnt of a stream and returns a new stream containing
+                eleemnts that satisfy the predicate.
+                this is a intermidiate operation as it returns a new stream.
+
+            Stream map(mapper)
+
+                a mapper is a functional interface that has a function which accepts one arg and returns one .
+
+                x -> x*x
+
+                x -> MAth.sqrt(x)
+
+                bankAccount -> bankAccount.getBalance() 
+
+                'map' will excute teh mapper on each element of the stream and a returns a new stream contianing
+                all the results.
+                this is a intermidiate operation as it returns a new stream.
+
     java.io
     java.nio
     java.sql

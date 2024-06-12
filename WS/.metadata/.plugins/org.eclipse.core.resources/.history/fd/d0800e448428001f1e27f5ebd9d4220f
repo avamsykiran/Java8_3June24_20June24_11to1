@@ -1,0 +1,14 @@
+package com.cts.jf;
+
+import java.util.Scanner;
+import java.util.function.Consumer;
+
+public class App13FunctionPackage {
+
+	public static void main(String[] args) {
+
+		Consumer<String> c1 = System.out::println;
+		
+		c1.accept("Hello Everybody");
+	}
+}
