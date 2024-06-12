@@ -1,0 +1,23 @@
+package com.cts.jf;
+
+import java.util.Scanner;
+
+public class App08UnCheckedExceptions {
+
+	public static void main(String[] args) {
+	
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("Enter a number: ");
+		int x = scan.nextInt();
+		
+		System.out.println("Enter another number: ");
+		int y = scan.nextInt();
+		
+		System.out.println("The qut is : "+(x/y));
+		System.out.println("Appliction Terminated!");
+		
+		scan.close();
+	}
+
+}

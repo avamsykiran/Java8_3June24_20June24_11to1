@@ -1,0 +1,24 @@
+package com.cts.jf.service;
+
+import com.cts.jf.exceptions.BankingException;
+import com.cts.jf.models.BankAccount;
+
+public class BankingService {
+
+	public void deposit(BankAccount acc,double amount) throws BankingException {
+		
+		if(amount<0) {
+			throw new BankingException("Negative Amount can not be deposited");
+		}
+		
+		if(acc!=null) {
+			acc.setCurrentBalance(acc.getCurrentBalance()+amount);
+		}
+	}
+	
+	public void withdraw(BankAccount acc,double amount) {
+		if(acc!=null) {
+			acc.setCurrentBalance(acc.getCurrentBalance()-amount);
+		}
+	}
+}

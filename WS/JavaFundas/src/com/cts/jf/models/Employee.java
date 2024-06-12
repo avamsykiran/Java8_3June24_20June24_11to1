@@ -2,7 +2,7 @@ package com.cts.jf.models;
 
 import java.util.Objects;
 
-public class Employee {
+public class Employee implements Comparable<Employee> {
 
 	private int empId;
 	private String fullName;
@@ -23,6 +23,11 @@ public class Employee {
 		this(emp.empId,emp.fullName,emp.salary);
 	}
 
+	@Override
+	public int compareTo(Employee o) {
+		return ((Integer)this.empId).compareTo(o.empId);
+	}
+	
 	public int getEmpId() {
 		return empId;
 	}
@@ -69,5 +74,7 @@ public class Employee {
 	public String toString() {
 		return "empId=" + empId + ", fullName=" + fullName + ", salary=" + salary;
 	}
-		
+
+	
+			
 }

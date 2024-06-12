@@ -441,10 +441,70 @@ Java 8
         StringBuffer
         StringBuilder
 
-        Throwable
-            |- Exception
-                    |-RuntimeException
-        
+        Exception Handling
+
+            Throwable
+                |- Exception
+                        |-<sub classes of Exception class> are called CHECKED Exceptions
+                        |-RuntimeException
+                            |-<sub classes of RuntimeException class including RuntimeException> are called UN_CHECKED Exceptions
+
+            CHECKED Exceptions are checked by the compiler, if they are handled or not. And if not handled
+            the compilation will not continue. It is compulsory to handle CHECKED Exceptions.
+
+                try{
+                    Connection con = DriverManager.getConnection(dbURL,dbUserName,ddPassword); 
+                    //in this case we cannot avoid if the user name or password ae changed by the time the above line executes
+                    //we can not control the power-off of the database server by the time the above line exeucte.
+                } catch(SQLException exp){
+
+                }
+
+            UN_CHECKED Exceptions are NOT checked by the compiler, if they are handled or not. It is NOT compulsory to handle UN_CHECKED Exceptions. Because the UN_CHECKED exceptions MUST NOT BE HANDLED USING TRY..CATCH, BUT THEY MUST BE AVOIDED.
+
+                    public void increaseSal(Employee emp,double percent){
+                        if(emp!=null){  //avoiding NullPointerException, we are not handling it
+                            emp.setSalary(emp.getSalary() + (emp.getSalary()*percent));
+                        }
+                    }
+
+            //try-with-multiple-catch
+
+            try{
+                //statements that may raise an exception
+            }catch(ExceptionType1 exp){
+                //alternate code or exception handling happens
+            }catch(ExceptionType2 exp){
+                //alternate code or exception handling happens
+            }catch(ExceptionType3 exp){
+                //alternate code or exception handling happens
+            }finally {
+                //any code that has to be executed irrespective an exception occured or not .
+                //is sued to close resources like streams, connections ....etc.,
+            }
+
+            //try-with-multi-catch
+
+            try{
+                //statements that may raise an exception
+            }catch(ExceptionType1 | ExceptionType2 | ExceptionType3 exp){
+                //alternate code or exception handling happens
+            }finally {
+                //any code that has to be executed irrespective an exception occured or not .
+                //is sued to close resources like streams, connections ....etc.,
+            }
+
+            //try-with-resources
+
+            try(/*declare all clsosable resources like fiels, streams, connectiosn ..etc., here..*/){
+                //statements that may raise an exception
+            }catch(ExceptionType1 | ExceptionType2 | ExceptionType3 exp){
+                //alternate code or exception handling happens
+            }
+
+            'throw'     is a keyword used to raise an exception
+            'throws'    is a keyword used to transfer the exception handling from a method to its caller-method.
+
         Runnable
             |-Thread
 
@@ -468,8 +528,57 @@ Java 8
 
         DateTimeFormatter.ofPattern("");
 
-
     java.util
+        
+        Scanner
+
+        Comparator
+            is an interface used to provide comparision strategy of any model.
+
+                int compare(T obj1,T obj2); // comparatorObject.compare(obj1,obj2);
+
+                is expected to return a
+                    positive number if obj1 is greater than obj2 OR
+                    negative number if obj1 is lesser than obj2 OR
+                    zero meaning both objects are equal.
+
+            java.lang.Comparable is also an interface expected to be implemented by a model class to faclitte the comparision strategy. 
+
+                int compareTo(Object);      // obj1.compareTo(obj2)       
+
+            Comparable interface is used for default comparision strategy, whereas
+            Comparator interface facilitates customized comparision strategy.
+
+
+        Collection<T> (i)   add(ele),remove(ele),contians(ele),size(),clear(),stream()
+            ↑
+            |- Set (i)
+            |               represents a non-linear data structure.
+            |               elements in set will not have index. set doesn't allow duplicates
+            |
+            |   |-HashSet (c)           doesn't have any order in retriving elements
+            |   |-LinkedHashSet (c)     it follows entry order in retriving elements
+            |   |-TreeSet (c)           it follows sorted order in retriving elements
+            |
+            |- List (i)           
+            |               represents a linear data structure.
+            |               elements have index (0 based). duplicate elements are allowed.
+            |
+            |               add(int index,element),removeAt(int index),first(),last() ...etc.,
+            |
+            |    |- Vector          a synchronized growable array, thread-safe
+            |    |- ArrayList       a growable array (not synchronized), not thread safe
+            |    |- LinkedList      a doublly linked list implementation
+
+        Map (i)             put(key,value),set(key,value),containsKey(key),keySet(),size(),clear()
+            |               key can not be duplicate
+            |
+            | - HashMap (c)         doesn't have any order in retriving elements
+            | - LinkedHashMap (c)   it follows entry order in retriving elements
+            | - TreeMap (C)         it follows sorted order on key in retriving elements
+
+        Collections (c)     is a class that providea avariety of utility functions.
+
     java.util.regex
     java.util.function
     java.util.stream

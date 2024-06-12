@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.cts.jf.models.Employee"/>
     <fullyQualifiedTypeName name="com.cts.jf.models.ContractEmployee"/>
     <fullyQualifiedTypeName name="com.cts.jf.models.AdBoard"/>
     <fullyQualifiedTypeName name="com.cts.jf.models.PhotoFrame"/>
     <fullyQualifiedTypeName name="com.cts.jf.models.RectangularBoard"/>
     <fullyQualifiedTypeName name="com.cts.jf.models.CircularBoard"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.lang.Character"/>
     <fullyQualifiedTypeName name="java.time.LocalTime"/>
     <fullyQualifiedTypeName name="java.time.Duration"/>
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="java.time.Month"/>
     <fullyQualifiedTypeName name="java.time.Period"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="com.cts.jf.models.BankAccount"/>
+    <fullyQualifiedTypeName name="com.cts.jf.service.BankingService"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="com.cts.jf.exceptions.BankingException"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.cts.jf.models.Employee"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="java.util.Comparator"/>
+    <fullyQualifiedTypeName name="java.util.LinkedHashSet"/>
 </qualifiedTypeNameHistroy>
