@@ -668,6 +668,61 @@ Java 8
                 all the results.
                 this is a intermidiate operation as it returns a new stream.
 
+        Assignment:
+
+            (a) Create a Model called "Item". Item will have itemCode:int,title:string,price:double,packageDate:LocalDate as fields.
+            (b) Make the item implement Comparable interface and override compareto method to caompare two itmes based on their itemCode.
+            (c) Create a List<Itme> and display them using an ApplicationClass.
+
+            (d) Pick up the names of all thoe items that has price between 100 and 300, and print them.
+
+            (e) add two more fields to the Item model, expiryDate:LocalDate and category:String ["BEVERAGE","CERALS","PULSES","ACCESSORIES"]
+
+            (f) Assuming the shelfLife of each time as 40 days for CERALS and PULSES, 80 days for BEVERAGES and 5 years for ACCESSORIES,
+                compute the expiryDate of each item.
+
+            (g) Pick up the costliest beverage and print it.
+    
+    Multi-Threads
+
+        Thread is a isolated process.
+
+        if multiple processes share the same heap, they are said to be a group of threads or multi-threading.
+
+        Each java application is a thread by-itself.
+
+        java.lang.Runnable      void run()
+                    |
+                    java.lang.Thread
+
+                                Thread()
+                                Thread(Runnable)
+                                Thread(String name)
+                                Thread(Runnable,String)
+
+                                String getName()
+                                void setName(String name);
+                                int getPriority();
+                                void setPriotiry(int p);
+                                void start()
+                                void join()
+                                static void sleep(long durationInMilli)
+                                static Thread currentThread();
+                                
+                constructor()
+                    |
+                    | start()
+                    ↓
+                    [...queue READY] ------ the cpu and other resources are available --|
+                                ↑                                                       |
+                                |                                                       ↓
+                            [PAUSED...]-------------sleep()----------------------- [Running (run()) ]
+                                                                                        |
+                                                                                        ↓
+                                                                                    [Terminates]
+
+                                                                                    
+
     java.io
     java.nio
     java.sql

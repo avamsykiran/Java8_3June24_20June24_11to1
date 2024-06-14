@@ -105,4 +105,8 @@
 		<item key="expanded7" value="false"/>
 		<item key="expanded8" value="false"/>
 	</section>
+	<section name="RenameInformationPopup">
+	</section>
+	<section name="org.eclipse.ltk.ui.refactoring.settings">
+	</section>
 </section>
