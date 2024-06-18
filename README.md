@@ -715,14 +715,38 @@ Java 8
                     ↓
                     [...queue READY] ------ the cpu and other resources are available --|
                                 ↑                                                       |
+                                |                                                       |
                                 |                                                       ↓
                             [PAUSED...]-------------sleep()----------------------- [Running (run()) ]
                                                                                         |
                                                                                         ↓
                                                                                     [Terminates]
 
-                                                                                    
 
-    java.io
-    java.nio
+    Multi-Layer Archetecture
+
+        DAO     <-------models------> SERVICE <-------models------> UI
+
+        UI - User Interface - is responsible to 
+                                (a) accept data or instruction from the user.
+                                (b) to display information or resposne from the application
+
+        SERVICE               is responsible to
+                                (a) provide bussiness logic like caliculations, computations, validations ..etc.,
+                                (b) it generally accepts a model from UI layer, validates or computes on the model
+                                    and passes model to the DAO layer for persistence.
+
+        DAO - DataAccessObject -    is responsible to
+                                        (a) interact with a data store like a file/ or a databases etc.,
+                                                and persist the data into the data store.
+                                        (b) it receives the model from service layer and after persisting
+                                                will inform the service layer with the outcome of the
+                                                data operation and the service layer will
+                                                pass on the outcoem to the UI layer 
+                                                and the UI layer will according inform the user.
+
+    
+
+    java.io, java.nio
+
     java.sql

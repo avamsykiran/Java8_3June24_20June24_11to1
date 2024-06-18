@@ -1,5 +1,0 @@
-package com.cts.jf.exceptions;
-
-public class BankingException {
-
-}
