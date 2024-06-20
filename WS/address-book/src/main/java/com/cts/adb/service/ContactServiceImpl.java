@@ -55,7 +55,7 @@ public class ContactServiceImpl implements ContactService {
 		}
 		
 		if(!errMsgs.isEmpty()) {
-			throw new AddressBookException(errMsgs.stream().reduce("Validation Errors", (m1,m2) -> String.format("%s \n %s", s1,s2)));
+			throw new AddressBookException(errMsgs.stream().reduce("Validation Errors", (m1,m2) -> String.format("%s \n %s", m1,m2)));
 		}
 		
 		return true;

@@ -749,4 +749,58 @@ Java 8
 
     java.io, java.nio
 
-    java.sql
+        java.io provides a classical InputOutput API
+        java.nio provides a novel / new InputOutput API , and also a few non-blocking InputOutput API.
+
+            Files
+            Paths
+            Path
+            Directories
+
+            Non-Blocking api repalced IO-Streams with Channels, Buffers and Selectors
+
+                Channel is a flow of data
+                Buffer is a temporary memory location to store data from a channel or into a channel
+                Selector is a monitor on a buffer that responds when ever a reading or writing happens on the buffer.
+
+    JDBC
+
+        Oracle          <-> Thin Driver <->
+        MySQl           <-> ConnectorJ Driver <-> JDBC-API <--> [ DAO <-model-> SERVICE <-model-> UI ] <--> End User
+        Ms SQL Server   <-> Jet Driver <->
+
+        A Jdbc is a database connectivity specification (only declarations [interfaces and abstract class] ).
+        Each Database driver is an implementation of this specification
+
+            Oracle      jdbc:oracle:thin:@serverName:5314/OracleServiceName
+            MySQL       jdbc:mysql://serNameOrIP:3306/databaseName
+
+        java.sql
+
+            Connection con = DriverManager.getConnection(dbConnectionString,userId,password);
+                        ↑
+                ---------------------------------------------------------------------------------
+                ↑                                       ↑                                       ↑ 
+            Statement st = con.createStatement();       |           CallableStatement cst = con.prepareCall(call);
+                                        PreparedStatement pst = con.prepareStatement(qry);
+
+            Statement and PreparedStatement are used to execute DDL/DML/DRL queries.
+            CallableStatement is used to execute a database procedure or function.
+
+            Statement                       used to handle dynamic queries.
+                int executeUpdate(qry);         used to execute insert/update/delete qrys and return affectedRowCount
+                boolean execute(qry);           used to execute create/drop/alter qrys and returns isDoneOrNot
+                ResultSet executeQuery(qry);    used to execute Select qry and the data is returns as a ResutlSet Obj
+
+            PreparedStatement               used to handle static queries and supports paramaters.
+                int executeUpdate();         used to execute insert/update/delete qrys and return affectedRowCount
+                boolean execute();           used to execute create/drop/alter qrys and returns isDoneOrNot
+                ResultSet executeQuery();    used to execute Select qry and the data is returns as a ResutlSet Obj
+                void set<Type>(paramIndex,paramValue)
+
+            ResultSet
+                is an interface that hold the data returned by the Select qry.
+
+                    boolean next()
+                    <Type> get<Type>(colIndex)
+                    <Type> get<Type>(colLabel)

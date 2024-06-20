@@ -28,7 +28,7 @@ public class ContactUI {
 		while (!"quit".equalsIgnoreCase(cmd)) {
 
 			System.out.println("Command [add/delete/list/quit]? ");
-			String cmd = scan.nextLine().toLowerCase();
+			cmd = scan.nextLine().toLowerCase();
 
 			switch (cmd) {
 			case "add":
